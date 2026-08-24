@@ -1,0 +1,16 @@
+node_modules/
+.vercel/
+dist/
+.output/
+.nitro/
+.tanstack/
+screenshots/
+artifacts/
+*.log
+.DS_Store
+.env
+.env.*
+!.env.example
+pglite-data/
+*.local
+.grok/app-env.json

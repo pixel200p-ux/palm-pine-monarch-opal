@@ -1,0 +1,151 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-sans: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-display: "Be Vietnam Pro", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Sans", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-background: var(--app-bg);
+  --color-foreground: var(--app-fg);
+  --color-card: var(--app-surface);
+  --color-card-foreground: var(--app-fg);
+  --color-popover: var(--app-surface);
+  --color-popover-foreground: var(--app-fg);
+  --color-primary: var(--app-navy);
+  --color-primary-foreground: var(--app-on-navy);
+  --color-secondary: var(--app-secondary);
+  --color-secondary-foreground: var(--app-fg);
+  --color-muted: var(--app-muted);
+  --color-muted-foreground: var(--app-fg-muted);
+  --color-accent: var(--app-accent);
+  --color-accent-foreground: var(--app-on-navy);
+  --color-destructive: var(--app-loss);
+  --color-destructive-foreground: #ffffff;
+  --color-border: var(--app-border);
+  --color-input: var(--app-border);
+  --color-ring: var(--app-navy);
+  --color-profit: var(--app-profit);
+  --color-loss: var(--app-loss);
+  --color-warn: var(--app-warn);
+  --color-navy: var(--app-navy);
+  --color-navy-deep: var(--app-navy-deep);
+  --color-sidebar: var(--app-sidebar);
+  --color-sidebar-foreground: var(--app-sidebar-fg);
+  --color-chart-dcds: var(--app-chart-dcds);
+  --color-chart-etf: var(--app-chart-etf);
+  --color-chart-stock: var(--app-chart-stock);
+  --color-chart-crypto: var(--app-chart-crypto);
+  --color-chart-bank: var(--app-chart-bank);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius: 12px;
+}
+
+:root {
+  --app-bg: #f3f5f8;
+  --app-surface: #ffffff;
+  --app-sidebar: #0a2540;
+  --app-sidebar-fg: #e8eef4;
+  --app-navy: #0a2540;
+  --app-navy-deep: #061525;
+  --app-on-navy: #f7f9fc;
+  --app-fg: #0c1929;
+  --app-fg-muted: #5b6b7c;
+  --app-muted: #e8edf2;
+  --app-secondary: #eef2f6;
+  --app-accent: #163e6f;
+  --app-border: color-mix(in oklab, #0c1929 12%, transparent);
+  --app-profit: #0f7b5a;
+  --app-loss: #c2413b;
+  --app-warn: #b45309;
+  --app-chart-dcds: #1b6b4a;
+  --app-chart-etf: #5b6b7c;
+  --app-chart-stock: #163e6f;
+  --app-chart-crypto: #3d5a80;
+  --app-chart-bank: #2a6f97;
+  --shadow-card: 0 1px 2px color-mix(in oklab, #0a2540 6%, transparent),
+    0 8px 24px color-mix(in oklab, #0a2540 5%, transparent);
+}
+
+html.dark {
+  color-scheme: dark;
+  --app-bg: #07111c;
+  --app-surface: #0c1a2b;
+  --app-sidebar: #061018;
+  --app-sidebar-fg: #e8eef4;
+  --app-navy: #7aa2d4;
+  --app-navy-deep: #0a2540;
+  --app-on-navy: #07111c;
+  --app-fg: #e8eef4;
+  --app-fg-muted: #93a4b8;
+  --app-muted: #132338;
+  --app-secondary: #122033;
+  --app-accent: #7aa2d4;
+  --app-border: color-mix(in oklab, #e8eef4 12%, transparent);
+  --app-profit: #34d399;
+  --app-loss: #f87171;
+  --app-warn: #fbbf24;
+  --app-chart-dcds: #34d399;
+  --app-chart-etf: #94a3b8;
+  --app-chart-stock: #7aa2d4;
+  --app-chart-crypto: #93c5fd;
+  --app-chart-bank: #38bdf8;
+  --shadow-card: 0 1px 2px rgb(0 0 0 / 0.3), 0 8px 24px rgb(0 0 0 / 0.25);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  html.dark {
+    color-scheme: dark;
+  }
+  body {
+    background: var(--app-bg);
+    color: var(--app-fg);
+    font-family: var(--font-sans);
+    line-height: 1.5;
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  * {
+    border-color: var(--app-border);
+  }
+  input, textarea, select {
+    font: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+  font-family: var(--font-mono);
+}
+
+.table-scroll {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-scroll table {
+  min-width: 640px;
+}
